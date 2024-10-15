@@ -62,10 +62,10 @@ def main(imgpath):
     cv2.waitKey()
     cv2.destroyAllWindows()
     #设置输出路径
-    saveFile="./DataImage/2/1o.png"
+    saveFile="./DataImage/3/1o.png"
     cv2.imwrite(saveFile,output)
 
 if __name__ == '__main__':
     # 输入图像路径
-    imgpath = "./DataImage/2/1.png"
+    imgpath = "./DataImage/3/1.png"
     main(imgpath)
