@@ -1,4 +1,6 @@
-#将图像通过极坐标转为横向
+'''
+将图像通过极坐标转为横向的算法
+'''
 import numpy as np
 import math
 import cv2

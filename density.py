@@ -1,4 +1,8 @@
-#计算密度图
+'''
+计算密度图
+结果在部分水肿的图片里蛮好看的
+其他的还没试
+'''
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt

@@ -1,3 +1,8 @@
+'''
+把hsv变成rgb
+和
+把rgb变成hsv
+'''
 import cv2
 import math
 
@@ -55,17 +60,17 @@ MAR1 = cv2.getRotationMatrix2D((x0,y0), theta1, 1.0)
 
 imgR1 = cv2.warpAffine(img, MAR1, (width, height))  # 旋转变换，默认为黑色填充
 
-
+#半径和中心
 r=383-18
 r1=383-272
 x0=511
 y0=383
 
-
+#遍历每个像素，保留图像中央的圆形部分
 for y in range(height):
     for x in range(width):
-        if (x-x0)**2+(y-y0)**2>r**2:
-            imgR1[y,x]=(0,0,0)
+        if (x-x0)**2+(y-y0)**2>r**2: #判断当前像素 (x, y) 是否在以 (x0, y0) 为中心，半径为 r 的圆形区域之外
+            imgR1[y,x]=(0,0,0) #当前像素在圆的外部，那么将这个像素的颜色设置为黑色
     pixel0=imgR1[y,509]
     pixel2=imgR1[y,513]
     h1,s1,v1=rgb2hsv(pixel0[2],pixel0[1],pixel0[0])
@@ -76,6 +81,8 @@ for y in range(height):
     imgR1[y,510]=(rgb1[2],rgb1[1],rgb1[0])
     imgR1[y,511]=(rgb2[2],rgb2[1],rgb2[0])
     imgR1[y,512]=(rgb3[2],rgb3[1],rgb3[0])
+
+
 cv2.imshow("vertical",imgR1)
 cv2.waitKey()
 cv2.destroyAllWindows()

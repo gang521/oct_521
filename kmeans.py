@@ -1,3 +1,9 @@
+'''
+kmeans聚类
+最常见的聚类算法
+画出来的图能看到目标区域的雏形
+感觉暂时还有用
+'''
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
