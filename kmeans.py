@@ -25,7 +25,7 @@ def kmeans_segmentation(image, num_clusters):
     return segmented_image
 
 # 加载图像
-img = cv2.imread('DataImage/2/1o.png')
+img = cv2.imread('DataImage/2/1e.png')
 
 # 预处理图像
 processed_image = preprocess_image(img)
@@ -51,4 +51,4 @@ cv2.imshow('Segmented Image', segmented_image)
 cv2.waitKey()
 cv2.destroyAllWindows()
 # 保存分割结果
-cv2.imwrite('DataImage/2/1ok.png', segmented_image * 255)
+#cv2.imwrite('DataImage/2/1ok.png', segmented_image * 255)
