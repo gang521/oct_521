@@ -9,13 +9,13 @@ import numpy as np
 import cv2 as cv
 
 # 读取图像
-img1 = cv.imread('DataImage/2/1.png', 0)
+img1 = cv.imread('DataImage/3/4eG70-k.png', 0)
 if img1 is None:
     print("Error: Could not read image.")
     exit(1)
 
 # 定义一个 3x3 的卷积核
-kernel = np.ones((3, 3), np.uint8)
+kernel = np.ones((5, 5), np.uint8)
 
 # 进行闭运算
 closing = cv.morphologyEx(img1, cv.MORPH_CLOSE, kernel)
@@ -26,5 +26,6 @@ cv.putText(closing, "Closing", (10, 30), cv.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 
 # 显示闭运算后的图像
 cv.imshow("origin", img1)
 cv.imshow("Closed Image", closing)
+cv.imwrite('DataImage/3/4eG70-k-close.png', closing)
 cv.waitKey(0)
 cv.destroyAllWindows()

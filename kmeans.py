@@ -25,13 +25,13 @@ def kmeans_segmentation(image, num_clusters):
     return segmented_image
 
 # 加载图像
-img = cv2.imread('DataImage/2/1e.png')
+img = cv2.imread('DataImage/3/1eB_roi_adativeThreshold.png')
 
 # 预处理图像
 processed_image = preprocess_image(img)
 
 # 对图像进行K-means分割
-num_clusters = 20  # 设置聚类簇的数量
+num_clusters = 40  # 设置聚类簇的数量
 segmented_image = kmeans_segmentation(processed_image, num_clusters)
 
 # 使用 Matplotlib 显示原始图像和分割结果
@@ -48,6 +48,7 @@ segmented_image = kmeans_segmentation(processed_image, num_clusters)
 #
 # plt.show()
 cv2.imshow('Segmented Image', segmented_image)
+# cv2.imwrite('DataImage/2/10eG87-k.png', segmented_image*255)
 cv2.waitKey()
 cv2.destroyAllWindows()
 # 保存分割结果

@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
 
 # 读取图像
-image_path = 'DataImage/2/1d.png'
+image_path = 'DataImage/3/4e_R_adathre.png.png'
 image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 
 # 二值化处理
